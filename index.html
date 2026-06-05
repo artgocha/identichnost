@@ -5,18 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDENTICHNOST.NET</title>
     <style>
-        /* Базовые настройки стиля (черный фон и оранжевый текст) */
         body {
             background-color: #000000;
-            color: #ff5500; /* Тот самый яркий цифровой оранжевый */
-            font-family: 'Courier New', Courier, monospace; /* Моноширинный шрифт для нет-арт стиля */
+            color: #ff5500; 
+            font-family: 'Courier New', Courier, monospace; 
             margin: 0;
             padding: 60px;
             box-sizing: border-box;
             min-height: 100vh;
         }
 
-        /* Главная сетка, разделяющая экран на две колонки (как на твоем макете) */
         .main-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -25,14 +23,12 @@
             margin: 0 auto;
         }
 
-        /* --- ЛЕВАЯ СТОРОНА --- */
         .left-side {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
 
-        /* Огромный массивный заголовок */
         .main-title {
             font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
             font-size: 4.5rem;
@@ -43,28 +39,25 @@
             color: #ff5500;
         }
 
-        /* Ссылка-обертка: объединяет обложку и подпись в один кликабельный блок */
         .book-link {
             text-decoration: none;
             display: inline-block;
-            transition: transform 0.2s ease, opacity 0.2s ease;
+            transition: transform 0.2s ease;
         }
 
-        /* Эффект при наведении курсора */
         .book-link:hover {
-            transform: scale(1.02);
-            opacity: 0.9;
+            transform: scale(1.03);
         }
 
-        /* Оранжевый квадрат-заглушка для обложки */
+        /* Оранжевый квадрат-заглушка */
         .cover-placeholder {
             width: 220px;
             height: 310px;
             background-color: #ff5500;
             margin-bottom: 20px;
+            display: block;
         }
 
-        /* Белый текст версии под обложкой */
         .book-version {
             color: #ffffff;
             font-size: 1.3rem;
@@ -72,41 +65,36 @@
             letter-spacing: -0.5px;
         }
 
-        /* --- ПРАВАЯ СТОРОНА --- */
         .right-side {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-end;
-            text-align: right; /* Текст прижат к правому краю */
+            text-align: right; 
         }
 
-        /* Блок манифеста / описания */
         .description-text {
             font-size: 1.4rem;
             line-height: 1.4;
             max-width: 420px;
             margin-top: 15px;
-            word-wrap: break-word;
         }
 
-        /* Иллюстрация в правом нижнем углу */
-        .art-image {
+        /* Заглушка для правого арта (теперь это стильный цифровой шум из линий, а не картинка) */
+        .art-placeholder {
             width: 340px;
             height: 240px;
-            object-fit: cover;
+            border: 2px solid #ff5500;
+            background: repeating-linear-gradient(45deg, #000, #000 8px, #ff5500 8px, #ff5500 10px);
             margin-top: 40px;
-            /* Временный эффект, делающий картинку-заглушку черно-оранжевой */
-            filter: grayscale(1) sepia(1) hue-rotate(340deg) saturate(6) contrast(1.2);
         }
 
-        /* Адаптация под мобильные телефоны (чтобы всё не ломалось на узком экране) */
         @media (max-width: 768px) {
             body { padding: 30px 20px; }
             .main-container { grid-template-columns: 1fr; gap: 60px; }
             .right-side { align-items: flex-start; text-align: left; }
             .main-title { font-size: 3rem; margin-bottom: 30px; }
-            .art-image { width: 100%; max-width: 340px; }
+            .art-placeholder { width: 100%; max-width: 340px; }
         }
     </style>
 </head>
@@ -117,4 +105,21 @@
         <div class="left-side">
             <div class="main-title">IDENTICHNOST.NET</div>
             
-            <a href="sbornik
+            <a href="sbornik-1.html" class="book-link">
+                <div class="cover-placeholder"></div>
+                <p class="book-version">identichnost.net[V1]</p>
+            </a>
+        </div>
+
+        <div class="right-side">
+            <div class="description-text">
+                etot proekt issledovanie sobstvennoy identichnosti, razbrosannoy i razbitoy na sborniki v internete.
+            </div>
+            
+            <div class="art-placeholder"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
