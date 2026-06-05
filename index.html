@@ -13,17 +13,35 @@
 </head>
 <body>
 
-    <div class="main-container">
-        
-        <div class="column left-column">
-            <img src="images/logo.png" alt="IDENTICHNOST.NET" class="logo-img">
-            
-            <div class="orange-block-wrapper">
-                <div class="orange-rect"></div>
-                <p class="version-text">identichnost[V1]</p>
-            </div>
-        </div>
+   <div class="column left-column">
+    <img src="images/logo.png" alt="IDENTICHNOST.NET" class="logo-img">
+    
+    <a href="URL_ТВОЕГО_СБОРНИКА" target="_blank" class="orange-block-link">
+        <div class="orange-rect"></div>
+        <p class="version-text">identichnost[V1]</p>
+    </a>
+</div>
 
+<style>
+.left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Теперь всё прижато к верху */
+    gap: 25px; /* Регулируй этот отступ, чтобы блок был ближе или дальше от лого */
+}
+
+/* Стили для ссылки, чтобы она не меняла цвет текста */
+.orange-block-link {
+    text-decoration: none;
+    display: inline-block; /* Чтобы кликалась вся область блока */
+    transition: transform 0.2s ease; /* Добавим легкий эффект при наведении */
+}
+
+.orange-block-link:hover {
+    transform: scale(1.02); /* Блок чуть увеличится при наведении */
+}
+</style>
+    
      <!-- Правая колонка сайта -->
 <div class="column right-column">
     <p class="description-text">
