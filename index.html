@@ -3,83 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мои стихи и сборники</title>
+    <title>IDENTICHNOST.NET</title>
     <style>
-        /* Стиль для красивого книжного фона и шрифтов */
+        /* Базовые настройки стиля (черный фон и оранжевый текст) */
         body {
-            font-family: 'Georgia', serif;
-            background-color: #fdfcf7; /* Мягкий бумажный цвет */
-            color: #2c3e50;
+            background-color: #000000;
+            color: #ff5500; /* Тот самый яркий цифровой оранжевый */
+            font-family: 'Courier New', Courier, monospace; /* Моноширинный шрифт для нет-арт стиля */
             margin: 0;
-            padding: 40px 20px;
-            text-align: center;
+            padding: 60px;
+            box-sizing: border-box;
+            min-height: 100vh;
         }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: #7f8c8d;
-            font-style: italic;
-            margin-bottom: 50px;
-        }
-        /* Сетка для обложек */
-        .books-grid {
-            display: flex;
-            justify-content: center;
+
+        /* Главная сетка, разделяющая экран на две колонки (как на твоем макете) */
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
-            flex-wrap: wrap;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        /* Карточка книги */
-        .book-card {
+
+        /* --- ЛЕВАЯ СТОРОНА --- */
+        .left-side {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /* Огромный массивный заголовок */
+        .main-title {
+            font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+            font-size: 4.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 0.9;
+            margin-bottom: 50px;
+            color: #ff5500;
+        }
+
+        /* Ссылка-обертка: объединяет обложку и подпись в один кликабельный блок */
+        .book-link {
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        /* Эффект при наведении курсора */
+        .book-link:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+
+        /* Оранжевый квадрат-заглушка для обложки */
+        .cover-placeholder {
             width: 220px;
-            text-decoration: none; /* Убираем подчеркивание ссылки */
-            color: inherit;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 310px;
+            background-color: #ff5500;
+            margin-bottom: 20px;
         }
-        /* Эффект при наведении мышки на обложку */
-        .book-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+
+        /* Белый текст версии под обложкой */
+        .book-version {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin: 0;
+            letter-spacing: -0.5px;
         }
-        .book-cover {
-            width: 100%;
-            height: 330px;
-            object-fit: cover;
-            border-radius: 4px 12px 12px 4px; /* Делаем закругление как у корешка книги */
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+
+        /* --- ПРАВАЯ СТОРОНА --- */
+        .right-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            text-align: right; /* Текст прижат к правому краю */
         }
-        .book-title {
+
+        /* Блок манифеста / описания */
+        .description-text {
+            font-size: 1.4rem;
+            line-height: 1.4;
+            max-width: 420px;
             margin-top: 15px;
-            font-size: 1.2em;
-            font-weight: bold;
+            word-wrap: break-word;
+        }
+
+        /* Иллюстрация в правом нижнем углу */
+        .art-image {
+            width: 340px;
+            height: 240px;
+            object-fit: cover;
+            margin-top: 40px;
+            /* Временный эффект, делающий картинку-заглушку черно-оранжевой */
+            filter: grayscale(1) sepia(1) hue-rotate(340deg) saturate(6) contrast(1.2);
+        }
+
+        /* Адаптация под мобильные телефоны (чтобы всё не ломалось на узком экране) */
+        @media (max-width: 768px) {
+            body { padding: 30px 20px; }
+            .main-container { grid-template-columns: 1fr; gap: 60px; }
+            .right-side { align-items: flex-start; text-align: left; }
+            .main-title { font-size: 3rem; margin-bottom: 30px; }
+            .art-image { width: 100%; max-width: 340px; }
         }
     </style>
 </head>
 <body>
 
-    <h1>Моя поэтическая мифология</h1>
-    <p class="subtitle">Добро пожаловать в мою идентичность.</p>
-
-    <div class="books-grid">
+    <div class="main-container">
         
-        <!-- ПЕРВЫЙ СБОРНИК -->
-        <!-- Ссылка ведет на файл sbornik-1.html -->
-        <a href="sbornik-1.html" class="book-card">
-            <!-- Пока обложки нет, тут стоит временная картинка-заглушка -->
-            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400" alt="Обложка 1" class="book-cover">
-            <div class="book-title">«identichnost.net(2026-???)»</div>
-        </a>
-
-        <!-- ВТОРОЙ СБОРНИК -->
-        <a href="sbornik-2.html" class="book-card">
-            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400" alt="Обложка 2" class="book-cover">
-            <div class="book-title">«Цитадель(2021-2023)»</div>
-        </a>
-
-    </div>
-
-</body>
-</html>
+        <div class="left-side">
+            <div class="main-title">IDENTICHNOST.NET</div>
+            
+            <a href="sbornik
