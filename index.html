@@ -4,122 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDENTICHNOST.NET</title>
-    <style>
-        body {
-            background-color: #000000;
-            color: #ff5500; 
-            font-family: 'Courier New', Courier, monospace; 
-            margin: 0;
-            padding: 60px;
-            box-sizing: border-box;
-            min-height: 100vh;
-        }
-
-        .main-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .left-side {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        /* НАСТРОЙКА ТВОЕГО ЛОГОТИПА-КАРТИНКИ */
-        .main-title-img { 1780668410125.png
-            width: 100%;
-            max-width: 480px; /* Ограничиваем максимальную ширину, чтобы логотип не был гигантским */
-            height: auto;
-            display: block;
-            margin-bottom: 20px;
-            /* Если картинка не обрезана, этот код чуть сдвинет обложку вверх, убирая пустоту */
-            margin-top: -40px; 
-        }
-
-        .book-link {
-            text-decoration: none;
-            display: inline-block;
-            transition: transform 0.2s ease;
-        }
-
-        .book-link:hover {
-            transform: scale(1.03);
-        }
-
-        /* Оранжевый квадрат-заглушка для сборника */
-        .cover-placeholder {
-            width: 220px;
-            height: 310px;
-            background-color: #ff5500;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .book-version {
-            color: #ffffff;
-            font-size: 1.3rem;
-            margin: 0;
-            letter-spacing: -0.5px;
-        }
-
-        .right-side {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-end;
-            text-align: right; 
-        }
-
-        .description-text {
-            font-size: 1.4rem;
-            line-height: 1.4;
-            max-width: 420px;
-            margin-top: 15px;
-        }
-
-        /* Заглушка для правого арта */
-        .art-placeholder {
-            width: 340px;
-            height: 240px;
-            border: 2px solid #ff5500;
-            background: repeating-linear-gradient(45deg, #000, #000 8px, #ff5500 8px, #ff5500 10px);
-            margin-top: 40px;
-        }
-
-        /* Мобильная адаптация */
-        @media (max-width: 768px) {
-            body { padding: 30px 20px; }
-            .main-container { grid-template-columns: 1fr; gap: 40px; }
-            .right-side { align-items: flex-start; text-align: left; }
-            .main-title-img { margin-top: 0; }
-            .art-placeholder { width: 100%; max-width: 340px; }
-        }
-    </style>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="main-container">
         
-        <div class="left-side">
+        <div class="column left-column">
+            <img src="images/logo.png" alt="IDENTICHNOST.NET" class="logo-img">
             
-            <img src="logo.png" alt="IDENTICHNOST.NET" class="main-title-img">
-            
-            <a href="sbornik-1.html" class="book-link">
-                <div class="cover-placeholder"></div>
-                <p class="book-version">identichnost.net[V1]</p>
-            </a>
+            <div class="orange-block-wrapper">
+                <div class="orange-rect"></div>
+                <p class="version-text">identichnost.net[V1]</p>
+            </div>
         </div>
 
-        <div class="right-side">
-            <div class="description-text">
-                etot proekt issledovanie sobstvennoy identichnosti, razbrosannoy i razbitoy na sborniki v internete.
-            </div>
+        <div class="column right-column">
+            <p class="description-text">
+                etot proekt issledovanie<br>
+                sobstvennoy identichnosti,<br>
+                razbrosannoy i razbitoy na<br>
+                sborniki v internete.
+            </p>
             
-            <div class="art-placeholder"></div>
+            <img src="images/artwork.jpg" alt="Artwork" class="artwork-img">
         </div>
 
     </div>
