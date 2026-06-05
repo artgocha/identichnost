@@ -35,7 +35,13 @@ body {
 
 /* Левая колонка */
 .left-column {
-    align-items: flex-start;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important; /* Намертво прижимает книгу ВВЕРХ к логотипу */
+    align-items: flex-start !important;
+    gap: 25px !important; /* Четкий отступ между лого и оранжевым блоком */
+    height: auto !important; /* Чтобы колонка не растягивалась на весь экран */
+}
 }
 
 .logo-img {
