@@ -29,14 +29,15 @@
             align-items: flex-start;
         }
 
-        .main-title {
-            font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
-            font-size: 4.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 0.9;
-            margin-bottom: 50px;
-            color: #ff5500;
+        /* НАСТРОЙКА ТВОЕГО ЛОГОТИПА-КАРТИНКИ */
+        .main-title-img { 1780668410125.png
+            width: 100%;
+            max-width: 480px; /* Ограничиваем максимальную ширину, чтобы логотип не был гигантским */
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+            /* Если картинка не обрезана, этот код чуть сдвинет обложку вверх, убирая пустоту */
+            margin-top: -40px; 
         }
 
         .book-link {
@@ -49,7 +50,7 @@
             transform: scale(1.03);
         }
 
-        /* Оранжевый квадрат-заглушка */
+        /* Оранжевый квадрат-заглушка для сборника */
         .cover-placeholder {
             width: 220px;
             height: 310px;
@@ -80,7 +81,7 @@
             margin-top: 15px;
         }
 
-        /* Заглушка для правого арта (теперь это стильный цифровой шум из линий, а не картинка) */
+        /* Заглушка для правого арта */
         .art-placeholder {
             width: 340px;
             height: 240px;
@@ -89,11 +90,12 @@
             margin-top: 40px;
         }
 
+        /* Мобильная адаптация */
         @media (max-width: 768px) {
             body { padding: 30px 20px; }
-            .main-container { grid-template-columns: 1fr; gap: 60px; }
+            .main-container { grid-template-columns: 1fr; gap: 40px; }
             .right-side { align-items: flex-start; text-align: left; }
-            .main-title { font-size: 3rem; margin-bottom: 30px; }
+            .main-title-img { margin-top: 0; }
             .art-placeholder { width: 100%; max-width: 340px; }
         }
     </style>
@@ -103,7 +105,8 @@
     <div class="main-container">
         
         <div class="left-side">
-            <div class="main-title">IDENTICHNOST.NET</div>
+            
+            <img src="logo.png" alt="IDENTICHNOST.NET" class="main-title-img">
             
             <a href="sbornik-1.html" class="book-link">
                 <div class="cover-placeholder"></div>
